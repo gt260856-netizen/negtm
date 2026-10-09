@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Gautam Kumar Jha | Market Analytics & Research</title>
+  <meta name="description" content="Daily Index Research, Price Action Setups & Risk Management Insights by Gautam Kumar Jha.">
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1259516509689495');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1259516509689495&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root {
+      --bg-dark: #070d18;
+      --card-bg: rgba(13, 22, 38, 0.78);
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-gold: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-glow: rgba(6, 182, 212, 0.32);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 12%, #0f2347 0%, #081326 55%, var(--bg-dark) 100%);
+      color: var(--text-main);
+      overflow-x: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    /* Ambient Decorative Background Glows */
+    .glow-top {
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.28) 0%, transparent 70%);
+      filter: blur(60px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .glow-bottom {
+      position: absolute;
+      bottom: -80px;
+      right: 10%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, transparent 70%);
+      filter: blur(60px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Main Modern Glass Card */
+    .glass-card {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 405px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-radius: 26px;
+      padding: 20px 18px 16px;
+      text-align: center;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.85), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+    }
+
+    /* Live Status Pill */
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      padding: 4px 13px;
+      border-radius: 50px;
+      font-size: 11px;
+      color: #34d399;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.85); }
+    }
+
+    /* Round Profile Avatar with Precision Dual-Ring Glow */
+    .avatar-wrapper {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      padding: 3.5px;
+      background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--accent-cyan) 50%, var(--accent-gold) 100%);
+      box-shadow: 0 0 24px rgba(6, 182, 212, 0.42);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #0b1424;
+    }
+
+    /* Mentor Name Badge */
+    .mentor-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.45);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 12.5px;
+      color: #38bdf8;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .verified-icon {
+      width: 14px;
+      height: 14px;
+      fill: #38bdf8;
+    }
+
+    /* Sub-tagline */
+    .researcher-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+    }
+
+    /* Headline */
+    h1 {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 6px;
+      background: linear-gradient(180deg, #ffffff 30%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Subtitle Description */
+    p.subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    /* 3-Row Analysis Structure */
+    .structure-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 7px;
+      background: rgba(4, 10, 22, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 10px 13px;
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    .grid-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .row-icon {
+      color: var(--accent-emerald);
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    /* CTA High-Converting Animated Buttons */
+    .cta-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #04101e;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    /* Emerald Electric Button */
+    .cta-primary {
+      background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+      color: #03131e;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+      animation: pulseGlow 2.2s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 14px rgba(16, 185, 129, 0.4), 0 0 24px rgba(6, 182, 212, 0.25);
+      }
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 24px rgba(16, 185, 129, 0.75), 0 0 34px rgba(6, 182, 212, 0.45);
+      }
+    }
+
+    /* Subtle Shimmer Ray */
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+      animation: shimmer 2.4s infinite;
+    }
+
+    @keyframes shimmer {
+      100% { left: 100%; }
+    }
+
+    .cta-btn svg {
+      width: 19px;
+      height: 19px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .btn-subtext {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      opacity: 0.9;
+      margin-top: 1px;
+    }
+
+    /* Meta Safe Compliance Disclaimer */
+    .disclaimer {
+      margin-top: 10px;
+      font-size: 9.5px;
+      color: #64748b;
+      line-height: 1.35;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 8px;
+    }
+
+    /* 5-Second Silent Auto-Redirect Box */
+    .redirect-box {
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: 11px;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .redirect-seconds {
+      color: var(--accent-gold);
+      font-weight: 800;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Decorative Ambient Glows -->
+  <div class="glow-top"></div>
+  <div class="glow-bottom"></div>
+
+  <!-- Central Glassmorphic Card -->
+  <div class="glass-card">
+    
+    <!-- Top Live Tag -->
+    <div class="live-badge">
+      <span class="pulse-dot"></span> Live Market Research Desk
+    </div>
+
+    <!-- Round Logo / Mentor Photo (gtm.jpg) -->
+    <div class="avatar-wrapper">
+      <img src="gtm.jpg" alt="Gautam Kumar Jha" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1618042164219-62c820f10723?auto=format&fit=crop&w=240&q=80';">
+    </div>
+
+    <!-- Verified Badge with Name -->
+    <div class="mentor-badge">
+      <svg class="verified-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Gautam Kumar Jha
+    </div>
+
+    <!-- Profession Tag -->
+    <div class="researcher-tag">Financial Mentor & Technical Analyst</div>
+
+    <!-- Headline -->
+    <h1>Systematic Price Action & Daily Index Studies</h1>
+
+    <!-- Subtitle (Meta Compliant) -->
+    <p class="subtitle">
+      Stop emotional trading. Learn disciplined risk-to-reward frameworks, key support/resistance zones and daily institutional volume flow.
+    </p>
+
+    <!-- 3-Pillar Research Structure -->
+    <div class="structure-grid">
+      <div class="grid-row">
+        <span class="row-icon">✦</span>
+        <span><strong>Index Levels:</strong> Nifty & BankNifty Data-Backed Range Analysis</span>
+      </div>
+      <div class="grid-row">
+        <span class="row-icon">✦</span>
+        <span><strong>Risk Mastery:</strong> Strictly Disciplined Stop-Loss & Position Sizing</span>
+      </div>
+      <div class="grid-row">
+        <span class="row-icon">✦</span>
+        <span><strong>Free Community:</strong> 100% Free Learning & Case Study Group</span>
+      </div>
+    </div>
+
+    <!-- Primary CTA Button (Standard Event on Manual Click) -->
+    <a href="https://t.me/+SPc1CYKGcFswYjQ1" onclick="fbq('track', 'Contact');" class="cta-btn cta-primary" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+      <div>
+        <span>JOIN FREE TELEGRAM CHANNEL</span>
+        <span class="btn-subtext">(Free Access to Gautam Kumar Jha's Desk)</span>
+      </div>
+    </a>
+
+    <!-- Meta-Safe Educational Compliance Disclaimer -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> Content is purely for educational, analytical & informational purposes. We do not provide advisory, stock tips or guaranteed returns. Securities market investments are subject to market risks.
+    </div>
+
+    <!-- 5-Second Silent Auto-Redirect (No Event Fired) -->
+    <div class="redirect-box">
+      <span>Auto Redirecting in</span>
+      <span class="redirect-seconds" id="timer">5</span>
+      <span>sec...</span>
+    </div>
+
+  </div>
+
+  <!-- Countdown Script without Any Pixel Event -->
+  <script>
+    let timeLeft = 5;
+    const timerElem = document.getElementById("timer");
+    const targetUrl = "https://t.me/+SPc1CYKGcFswYjQ1";
+
+    const countdown = setInterval(function() {
+      timeLeft--;
+      if (timeLeft >= 0) {
+        timerElem.innerText = timeLeft;
+      }
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        // Direct redirect without invoking fbq('track')
+        window.location.href = targetUrl;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
